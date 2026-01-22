@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sienge Helper</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Markdown renderer (frontend) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="brand">
+      <div class="brand-left">
+        <img src="logo.png" alt="Logo" class="logo" />
+        <div class="brand-text">
+          <div class="title">Sienge Helper</div>
+          <div class="subtitle">Chat simples (acesso único)</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <span class="badge online">online</span>
+        <button id="clearBtn" class="ghost" title="Limpar conversa">Limpar</button>
+      </div>
+    </header>
+
+    <main class="card">
+      <section id="chat" class="chat" aria-live="polite"></section>
+
+      <div class="composer">
+        <div class="input-wrap">
+          <textarea id="inp" rows="1" placeholder="Digite sua mensagem..." autocomplete="off"></textarea>
+          <button id="btn" class="primary">Enviar</button>
+        </div>
+        <div class="hint">Enter para enviar • Shift+Enter para quebrar linha</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
