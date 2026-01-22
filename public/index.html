@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,6 +10,7 @@
   <!-- Markdown renderer (frontend) -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
+
 <body>
   <div class="wrap">
     <header class="brand">
@@ -22,6 +24,7 @@
 
       <div class="actions">
         <span class="badge online">online</span>
+        <button id="helpBtn" class="ghost" title="Instruções de uso">Instruções de Uso</button>
         <button id="clearBtn" class="ghost" title="Limpar conversa">Limpar</button>
       </div>
     </header>
@@ -39,6 +42,68 @@
     </main>
   </div>
 
+  <div id="helpModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close="1"></div>
+
+    <div class="modal-card" role="document" aria-labelledby="helpTitle">
+      <div class="modal-head">
+        <div>
+          <div id="helpTitle" class="modal-title">Como perguntar para obter melhores respostas</div>
+          <div class="modal-subtitle">Dicas rápidas para melhorar as respostas do Sienge Helper</div>
+        </div>
+        <button id="helpCloseBtn" class="ghost small" title="Fechar">Fechar</button>
+      </div>
+
+      <div class="modal-body">
+        <ul class="help-list">
+          <li>
+            <strong>Defina o objetivo:</strong>
+            diga exatamente o que você quer fazer
+            <em>(cadastrar, aprovar, emitir, corrigir, analisar)</em>.
+          </li>
+
+          <li>
+            <strong>Informe o contexto:</strong>
+            módulo, tela ou caminho no Sienge.
+          </li>
+
+          <li>
+            <strong>Inclua o cenário e dados:</strong>
+            regras, status, valores, datas ou mensagens de erro.
+          </li>
+
+          <li>
+            <strong>Faça uma pergunta por vez</strong>
+            e seja direto.
+          </li>
+
+          <li>
+            <strong>Peça o formato da resposta:</strong>
+            passo a passo, checklist ou exemplo.
+          </li>
+
+          <li>
+            <strong>Informe seu nível:</strong>
+            iniciante, intermediário ou avançado.
+          </li>
+
+          <li>
+            <strong>Peça ajustes, se necessário:</strong>
+            simplificar, detalhar ou resumir.
+          </li>
+        </ul>
+
+        <div class="modal-tip">
+          <strong>Exemplo de boa pergunta:</strong>
+          Quero <em>aprovar uma medição</em> no Sienge (módulo <em>Contratos → Medições</em>).
+          A medição está com status <em>“Em análise”</em> e aparece erro de permissão.
+          Sou <em>iniciante</em>. Pode explicar <em>passo a passo</em> o que verificar para aprovar?
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
-</html>

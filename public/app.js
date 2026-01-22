@@ -2,6 +2,36 @@ const chat = document.getElementById("chat");
 const inp  = document.getElementById("inp");
 const btn  = document.getElementById("btn");
 const clearBtn = document.getElementById("clearBtn");
+const helpBtn = document.getElementById("helpBtn");
+const helpModal = document.getElementById("helpModal");
+const helpCloseBtn = document.getElementById("helpCloseBtn");
+
+function openHelp() {
+  if (!helpModal) return;
+  helpModal.classList.add("is-open");
+  helpModal.setAttribute("aria-hidden", "false");
+}
+
+function closeHelp() {
+  if (!helpModal) return;
+  helpModal.classList.remove("is-open");
+  helpModal.setAttribute("aria-hidden", "true");
+}
+
+helpBtn?.addEventListener("click", openHelp);
+helpCloseBtn?.addEventListener("click", closeHelp);
+
+// Clique fora (backdrop) fecha
+helpModal?.addEventListener("click", (e) => {
+  const target = e.target;
+  if (target?.dataset?.close === "1") closeHelp();
+});
+
+// ESC fecha
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeHelp();
+});
+
 
 let history = [];
 
